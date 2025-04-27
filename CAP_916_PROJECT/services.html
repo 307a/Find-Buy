@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../fontawesome-free-6.7.2-web/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Winky Sans', sans-serif;
+            background-color: #f8f9fa; 
+        }
+        .scrollspy-sidebar {
+            background: transparent;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        .scrollspy-sidebar .nav-link {
+            color: #f66435;
+            font-weight: 500;
+        }
+        .scrollspy-sidebar .nav-link.active {
+            background: #f66435;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .content-section {
+            padding: 20px;
+        }
+       
+        section {
+            background-color: #e9ecef; 
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+        }
+        .footer {
+            
+            padding: 20px;
+            text-align: center;
+        }
+        .footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+        }
+        .footer .social-icons a:hover {
+            color: #f66435;
+        }
+        .navbar-nav .nav-link {
+            background-color: #fff; 
+            border: 1px solid #ddd; 
+            text-align: center;
+            transition: all 0.3s ease; 
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #f66435; 
+            color: #fff; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+
+        .navbar-nav .nav-link.active {
+            background-color: #f66435; 
+            color: #fff; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#serviceScrollspy" data-bs-offset="70" tabindex="0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./Images/logowhitebg.png" class="rounded" alt="Logo" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="home.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to Home page">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="Aboutus.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Learn more about us">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="contact.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Contact us">
+                            Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="services.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View our services">
+                            Services
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="blogreviews.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Read our blog and reviews">
+                            Blog & Review
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fs-6 mx-2 px-3 py-2 rounded-pill shadow-sm" href="repository.html" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search for products in the repository">
+                            Products
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Scrollspy Sidebar -->
+            <nav id="serviceScrollspy" class="col-md-3 scrollspy-sidebar">
+                <h5 class="mb-3">Jump to Service</h5>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#service1" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to Local Product Search section">Local Product Search</a>
+                    <a class="nav-link" href="#service2" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to Shop Directory section">Shop Directory</a>
+                    <a class="nav-link" href="#service3" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to Location-Based Search section">Location-Based Search</a>
+                    <a class="nav-link" href="#service5" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to 24/7 Customer Support section">24/7 Customer Support</a>
+                    <a class="nav-link" href="#service6" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to Discounts and Offers section">Discounts and Offers</a>
+                    <a class="nav-link" href="#faqs" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to go to Frequently Asked Questions section">FAQs</a>
+                </nav>
+            </nav>
+
+            <!-- Scrollable Content -->
+            <main class="col-md-9 content-section">
+                <h1 class="fw-bold mb-4 text-center">Our Services</h1> 
+                <section id="service1" class="py-4 border-bottom">
+                    <h3 class="fw-bold"><i class="fas fa-search-location me-2"></i> Local Product Search</h3>
+                    <p>Find products sold by local shops in your area with ease. Support small businesses while saving time and effort!</p>
+                    <p>Our platform allows you to search for products based on your location. Simply enter your city or neighborhood, and we’ll show you a list of shops offering the products you need. This feature is perfect for those who want to shop locally and reduce delivery times.</p>
+                    <ul>
+                        <li>Search by product category or name.</li>
+                        <li>Filter results by distance or shop ratings.</li>
+                        <li>Get directions to the shop or contact them directly.</li>
+                    </ul>
+                </section>
+
+                <section id="service2" class="py-4 border-bottom">
+                    <h3 class="fw-bold"><i class="fas fa-store me-2"></i> Shop Directory</h3>
+                    <p>Browse through a curated directory of local shops categorized by area, product type, and ratings.</p>
+                    <p>Our shop directory is designed to make it easy for you to discover new stores in your area. Whether you're looking for electronics, clothing, or groceries, our directory has you covered.</p>
+                    <ul>
+                        <li>View detailed shop profiles, including contact information and operating hours.</li>
+                        <li>Read customer reviews and ratings to make informed decisions.</li>
+                        <li>Bookmark your favorite shops for quick access in the future.</li>
+                    </ul>
+                </section>
+
+                <section id="service3" class="py-4 border-bottom">
+                    <h3 class="fw-bold"><i class="fas fa-map-marked-alt me-2"></i> Location-Based Search</h3>
+                    <p>Explore products available in any neighborhood or city with our flexible location filter.</p>
+                    <p>Our location-based search feature allows you to expand your shopping options beyond your immediate area. Whether you're planning a trip or looking for a specific product, you can search for shops in any location.</p>
+                    <ul>
+                        <li>Search for products in multiple cities or neighborhoods.</li>
+                        <li>Compare prices and availability across different locations.</li>
+                        <li>Plan your shopping trips with detailed shop maps and directions.</li>
+                    </ul>
+                </section>
+
+                
+
+                <section id="service5" class="py-4 border-bottom">
+                    <h3 class="fw-bold"><i class="fas fa-headset me-2"></i> 24/7 Customer Support</h3>
+                    <p>Our dedicated support team is available 24/7 to assist you with any queries or issues you may have.</p>
+                    <p>We understand that shopping can sometimes be challenging, which is why our customer support team is here to help. Whether you have questions about a product or need assistance with an order, we're just a call or message away.</p>
+                    <ul>
+                        <li>Contact us via phone, email, or live chat.</li>
+                        <li>Get quick resolutions to your issues.</li>
+                        <li>Access a comprehensive FAQ section for self-help.</li>
+                    </ul>
+                </section>
+
+                <section id="service6" class="py-4 border-bottom">
+                    <h3 class="fw-bold"><i class="fas fa-tags me-2"></i> Discounts and Offers</h3>
+                    <p>Enjoy exclusive discounts and offers on a wide range of products and services from local shops.</p>
+                    <p>We partner with local businesses to bring you the best deals and discounts. From seasonal sales to special promotions, you'll always find ways to save money while shopping locally.</p>
+                    <ul>
+                        <li>Access daily deals and flash sales.</li>
+                        <li>Receive personalized offers based on your shopping preferences.</li>
+                        <li>Save more with loyalty programs and reward points.</li>
+                    </ul>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faqs" class="py-5">
+                    <h2 class="fw-bold mb-4 text-center">Frequently Asked Questions</h2>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                    How do I search for local products?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Use the <strong>Local Product Search</strong> section to enter your location and browse available products from shops nearby.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    Can I order products online?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, use the <strong>Online Ordering</strong> feature to place orders and get products delivered to your doorstep.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    How can I contact customer support?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can reach our support team anytime using the <strong>24/7 Customer Support</strong> contact options provided on the site.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    Are there any discounts available?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, check out the <strong>Discounts and Offers</strong> section to find exclusive deals and promotions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+  <!-- Footer -->
+  <footer class="footer text-dark w-100 fw-bold">
+    <div class="container text-center">
+        <p>&copy; 2025 Your Business. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="text-dark me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-dark me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-dark me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb justify-content-center mt-3">
+                    <li class="breadcrumb-item active"><a href="home.html" class="text-decoration-none text-dark">Home</a></li>
+                    <li class="breadcrumb-item "><a href="repository.html" class="text-decoration-none text-dark">Products</a></li>
+                    <li class="breadcrumb-item"><a href="Aboutus.html" class="text-decoration-none text-dark">About Us</a></li>
+                    <li class="breadcrumb-item"><a href="services.html" class="text-decoration-none text-dark">Services</a></li>
+                    <li class="breadcrumb-item"><a href="blogreviews.html" class="text-decoration-none text-dark">Blog & Review</a></li>
+                    <li class="breadcrumb-item"><a href="contact.html" class="text-decoration-none text-dark">Contact</a></li>
+                    
+                </ol>
+            </nav>
+        
+    </div>
+    
+</footer>
+
+    <script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LPU E-RIDE - Payment</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("ULhtWBtKg_fLihR_I"); // ✅ Your EmailJS user ID
+    })();
+  </script>
+  <style>
+    body {
+      background: url('/5859972.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
+
+    .bg-overlay {
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .payment-section {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+      border: 2px solid #ff6600;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .payment-section h2 {
+      font-size: 2.5rem;
+      color: #ff6600;
+      font-weight: bold;
+    }
+
+    .payment-section p {
+      color: #ff6600;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .qr-code img {
+      width: 250px;
+      border-radius: 15px;
+      border: 5px solid #ff6600;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-code img:hover {
+      transform: scale(1.1);
+    }
+
+    .form-control, .form-select {
+      background-color: #333;
+      color: white;
+      border: 1px solid #ff6600;
+      margin-bottom: 15px;
+    }
+
+    .form-control::placeholder, .form-select::placeholder {
+      color: #888;
+    }
+
+    button {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e64a19;
+    }
+
+    @media (max-width: 768px) {
+      .payment-section {
+        width: 90%;
+        padding: 25px;
+      }
+
+      .payment-section h2 {
+        font-size: 2rem;
+      }
+
+      .payment-section p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-overlay"></div>
+
+  <div class="payment-section text-center">
+    <h2>LPU E-RIDE Payment</h2>
+    <p>Scan the QR code to complete your payment</p>
+
+    <!-- QR Code Display -->
+    <div class="qr-code mb-4">
+      <img id="qrImage" src="prince qr code.jpg" alt="QR Code">
+    </div>
+
+    <!-- Payment Confirmation Form -->
+    <form id="payment-form" class="text-start">
+      <input type="text" name="user_name" class="form-control" placeholder="Your Name" required />
+      <select name="plan_name" id="planDropdown" class="form-select" required>
+        <option value="">Select Plan</option>
+        <option value="1 Month - ₹450">1 Month - ₹450</option>
+        <option value="3 Months - ₹1200">3 Months - ₹1200</option>
+        <option value="6 Months - ₹2200">6 Months - ₹2200</option>
+      </select>
+      <input type="email" name="user_email" class="form-control" placeholder="Your Email" required />
+      <button type="submit" class="w-100 mt-3">Confirm Payment</button>
+    </form>
+  </div>
+
+  <script>
+    const qrImage = document.getElementById("qrImage");
+    const planDropdown = document.getElementById("planDropdown");
+
+    planDropdown.addEventListener("change", function () {
+      const selected = this.value;
+
+      if (selected.includes("₹450")) {
+        qrImage.src = "450 round scanner.jpg";
+      } else if (selected.includes("₹1200")) {
+        qrImage.src = "1200 round scanner.jpg";
+      } else if (selected.includes("₹2200")) {
+        qrImage.src = "2200 round scanner.jpg";
+      } else {
+        qrImage.src = "prince qr code.jpg";
+      }
+    });
+
+    document.getElementById('payment-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Send confirmation email to the user
+      emailjs.sendForm(
+        "service_ol3l22a",        // Service ID
+        "template_user_confirmation", // Template ID for user confirmation
+        this
+      ).then(function(response) {
+        console.log("Confirmation email sent to user", response);
+        // After user confirmation, send an email to the admin
+        emailjs.sendForm(
+          "service_ol3l22a",        // Service ID
+          "template_admin_notification", // Template ID for admin notification
+          this
+        ).then(function(response) {
+          console.log("Admin email sent", response);
+          window.location.href = "success.html"; // Redirect after success
+        }, function(error) {
+          console.error("Failed to send admin email", error);
+          alert("Failed to send admin email. Please try again.");
+        });
+      }, function(error) {
+        console.error("Failed to send user email", error);
+        alert("Failed to send user email. Please try again.");
+      });
+    });
+  </script>
+
+</body>
+</html>
